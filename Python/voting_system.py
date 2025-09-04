@@ -67,7 +67,7 @@ def get_count_of_votes(list_of_casted_votes):
 	return(counts)
 
 
-def get_party_result(vote_count, registered_parties):
+def get_election_result(vote_count, registered_parties):
 	result = []
 	for index_str, count in vote_count.items():
 		index = int(index_str) - 1
@@ -75,16 +75,17 @@ def get_party_result(vote_count, registered_parties):
 		result.append(f"{party} scored {count}")
 	return result	
 
-['pdp', 'scored', '1', 'lp', 'scored', '2']
-def get_election_result(party_result):
+def display_final_result(result):
+	largest = 0
+	winner = ""
+	result_sentence = ""
+	for election_result in result:
+		party = election_result.split("scored")[0].strip()
+		score = int(election_result.split("scored")[1].strip())
+		if score > largest:
+			largest = score
+			winner = party
+			result_sentence = election_result
+	return f"The winner is {winner} because {result_sentence}"
+			
 	
-	result = " ".join(party_result)
-	list1 = result.split(" ")
-	for number in range(0, len(list1), 2)
-		score = int(list1[number])
-	if 
-	return list	
-
-
-party_result = ['pdp scored 1', 'lp scored 2']
-print(get_election_result(party_result))
