@@ -36,7 +36,7 @@ def count_errors(systemStr, userResponse):
 
 
 
-sentence_to_be_displayed = "The program should display a sentence for the user.";
+sentence_to_be_displayed = "The program should display a sentence for the user."
 start_time = time.time()
 print(sentence_to_be_displayed)
 user_response = input("")
@@ -51,12 +51,12 @@ print(duration_in_minutes)
 number_of_words = count_words_in_sentence(user_response)
 words_per_minute = (int) number_of_words // duration_in_minutes
 
-number_of_errors = count_errors(sentence_to_be_displayed, user_response);
+number_of_errors = count_errors(sentence_to_be_displayed, user_response)
 total_key_strokes = len(user_response)
 
 correct_key_strokes = total_key_strokes - number_of_errors
 
-accuracy_percentage = (correct_key_strokes / total_key_strokes) * 100;
+accuracy_percentage = (correct_key_strokes / total_key_strokes) * 100
 
 print(f"Your result is stated below:\nTime taken (seconds): {duration_in_seconds}\nWords per minute: {words_per_minute}\nAccuracy percentage: {accuracy_percentage}\n")
 
